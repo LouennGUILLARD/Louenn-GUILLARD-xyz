@@ -35,6 +35,20 @@
                 <p class="error-message">{{ $message }}</p>
                 @enderror
 
+                <div>
+                    <label for="category_id">Catégorie</label>
+                    <select name="category_id" id="category_id" class="w-medium">
+                        <option value="">Selectionner un genre musical</option>
+                        @foreach($categories as $category)
+                            <option value="{{ $category->id }}" @if(old('category_id') == $category->id) selected @endif>{{ $category->name }}</option>
+                        @endforeach
+                    </select>
+                </div>
+
+                @error('category_id')
+                <p class="error-message">{{ $message }}</p>
+                @enderror
+
                 <div class="submit">
                     @csrf
                     <button type="submit" class="primary">Envoyer</button>

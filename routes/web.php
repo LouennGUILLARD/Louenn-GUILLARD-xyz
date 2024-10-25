@@ -36,7 +36,8 @@ Route::middleware('auth')->group(function () {
     Route::post('/tracks/create', [TrackController::class, 'store'])->name('app.tracks.store');
 
     // categories
-    Route::get('/categories', [CategoriesController::class, 'index'])->name('categories.index');
+    Route::get('/categories', [CategoriesController::class, 'index'])->name('app.categories.index');
+    Route::get('/categories/{category}', [CategoriesController::class, 'show'])->name('app.categories.show');
 
     // Profile
     Route::get('/profile', [ProfileController::class, 'edit'])->name('app.profile.edit');

@@ -13,7 +13,7 @@
             @endif
         </li>
         <li @class(['current' => request()->routeIs('app.tracks.create')])>
-            <a href="{{route('categories.index')}}">Catégories</a>
+            <a href="{{route('app.categories.index')}}">Catégories</a>
         </li>
         <li @class(['current' => request()->routeIs('app.tracks.create')])>
             <a href="{{ route('app.tracks.create') }}">+ Contribuer</a>

@@ -49,6 +49,13 @@ class Track extends Model
         return $this->belongsTo(Week::class);
     }
 
+    public function category()
+    {
+        return $this->belongsTo(Categories::class, 'categorie')->withDefault([
+            'name' => 'Catégorie inconnue',
+        ]);
+    }
+
     /**
      * Get current week tracks.
      */

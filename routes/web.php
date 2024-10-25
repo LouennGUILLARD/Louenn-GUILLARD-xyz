@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CategoriesController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\WeekController;
@@ -33,6 +34,9 @@ Route::middleware('auth')->group(function () {
     // Track
     Route::get('/tracks/create', [TrackController::class, 'create'])->name('app.tracks.create');
     Route::post('/tracks/create', [TrackController::class, 'store'])->name('app.tracks.store');
+
+    // categories
+    Route::get('/categories', [CategoriesController::class, 'index'])->name('categories.index');
 
     // Profile
     Route::get('/profile', [ProfileController::class, 'edit'])->name('app.profile.edit');

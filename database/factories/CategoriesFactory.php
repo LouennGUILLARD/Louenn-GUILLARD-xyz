@@ -19,14 +19,7 @@ class CategoriesFactory extends Factory
     {
         return [
             'name' => $this->faker->word(),
-            'track_count' => $this->faker->randomNumber(2),
+            'tracks_count' => $this->faker->randomNumber(2),
         ];
-    }
-
-    public function sample()
-    {
-        return $this->state(function (array $attributes) {
-            return app(CategoriesSamples::class)->collect()->random();
-        });
     }
 }

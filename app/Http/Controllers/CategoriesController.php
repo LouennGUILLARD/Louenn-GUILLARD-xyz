@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Categories;
+use App\Models\Track;
 
 class CategoriesController
 {
@@ -11,6 +12,16 @@ class CategoriesController
     {
         return view('app.categories.index', [
             'categories' => Categories::all(),
+        ]);
+    }
+
+    public function show(Categories $category)
+    {
+        $tracks = Track::where('categorie', $category->id)->paginate(10);
+
+        return view('app.categories.show', [
+            'category' => $category,
+            'tracks' => $tracks,
         ]);
     }
 }

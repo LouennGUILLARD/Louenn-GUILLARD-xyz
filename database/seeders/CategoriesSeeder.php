@@ -13,15 +13,15 @@ class CategoriesSeeder extends Seeder
     public function run(): void
     {
         $categories = [
-            ['name' => 'Soul', 'track_count' => 0],
-            ['name' => 'Ambient', 'track_count' => 0],
-            ['name' => 'Pop', 'track_count' => 0],
-            ['name' => 'Rap', 'track_count' => 0],
-            ['name' => 'Funk', 'track_count' => 0],
-            ['name' => 'Rock', 'track_count' => 0],
-            ['name' => 'Reggae / Dub', 'track_count' => 0],
-            ['name' => 'Techno', 'track_count' => 0],
-            ['name' => 'Electro', 'track_count' => 0],
+            ['name' => 'Soul', 'tracks_count' => 0],
+            ['name' => 'Ambient', 'tracks_count' => 0],
+            ['name' => 'Pop', 'tracks_count' => 0],
+            ['name' => 'Rap', 'tracks_count' => 0],
+            ['name' => 'Funk', 'tracks_count' => 0],
+            ['name' => 'Rock', 'tracks_count' => 0],
+            ['name' => 'Reggae / Dub', 'tracks_count' => 0],
+            ['name' => 'Techno', 'tracks_count' => 0],
+            ['name' => 'Electro', 'tracks_count' => 0],
         ];
 
         DB::table('categories')->insert($categories);
